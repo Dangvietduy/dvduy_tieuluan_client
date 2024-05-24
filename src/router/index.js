@@ -21,7 +21,9 @@ import StudentInternship from '../components/student_internship/StudentInternshi
 import StudentReport from '../components/student_report/StudentReport';
 import StudentResult from '../components/student_result/StudentResult';
 import TeacherInternship from '../components/teacher_internship/TeacherInternship';
+import Company from '../components/company/Company';
 import PrivateRoute from './PrivateRoute';
+import DetailCompany from '../components/detail_company/DetailCompany';
 
 function RouterComponent() {
     const { token, role } = useSelector((state) => state.auth);
@@ -52,6 +54,8 @@ function RouterComponent() {
                 <Route path='/internship' element={<PrivateRoute><ListInternship /></PrivateRoute>} />
                 <Route path='/internship/detail/:id' element={<PrivateRoute><DetailInternship /></PrivateRoute>} />
                 <Route path='/statistical' element={<PrivateRoute><Statistical /></PrivateRoute>} />
+                <Route path='/company' element={<PrivateRoute><Company /></PrivateRoute>} />            
+                <Route path='/list-company/detail/:id' element={<PrivateRoute><DetailCompany /></PrivateRoute>} />
             </>
         )
     }

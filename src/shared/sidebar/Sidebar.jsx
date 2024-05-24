@@ -20,6 +20,10 @@ const Sidebar = ({ isShowMenu }) => {
                                 <MdSchool size={30} />
                                 <span className='pl-3 text-lg sidebar-text'>Manager Student</span>
                             </NavLink>
+                            <NavLink to={'/company'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
+                                <MdSchool size={30} />
+                                <span className='pl-3 text-lg sidebar-text'>Manager Company</span>
+                            </NavLink>
                             <NavLink to={'/internship'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdLocationCity size={30} />
                                 <span className='pl-3 text-lg sidebar-text'>Manager Internship</span>
@@ -28,6 +32,7 @@ const Sidebar = ({ isShowMenu }) => {
                                 <MdOutlineInsertChartOutlined size={30} />
                                 <span className='pl-3 text-lg sidebar-text'>Statistical</span>
                             </NavLink>
+                            
                         </>
                     }
                     {

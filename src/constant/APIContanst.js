@@ -151,5 +151,29 @@ export const ConstanstAPI = {
         url: "http://localhost:8080/manager/statistical",
         method: "POST"
     },
+    GET_LIST_COMPANY: {
+        url: "http://localhost:8080/manager/listcompany",
+        method: "GET"
+    },
+    GET_LIST_COMPANY_SEARCH: {
+        url: "http://localhost:8080/manager/company/search",
+        method: "POST"
+    },
+    GET_INFO_COMPANY: {
+        url: "http://localhost:8080/company/infor",
+        method: "GET"
+    },
+    INSERT_COMPANY: {
+        url: "http://localhost:8080/manager/company",
+        method: "POST"
+    },
+    UPDATE_COMPANY: {
+        url: "http://localhost:8080/company/update",
+        method: "PUT"
+    },
+    DELETE_COMPANY: {
+        url: "http://localhost:8080/manager/company",
+        method: "DELETE"
+    },
 }
 
