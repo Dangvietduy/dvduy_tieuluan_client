@@ -35,6 +35,7 @@ const ListStudent = () => {
                     idInternship: student.internship?.id,
                     ...student.students,
                 }))
+                console.log(data);
                 setStudents(data);
             }
         } catch (error) {
@@ -132,7 +133,7 @@ const ListStudent = () => {
         }
     }
 
-    const headers = ["MSSV", "Full Name", "Email", "Gender", "Phone Number", "Class", "Course", "Start Day", "End Day", "Action"];
+    const headers = ["MSSV", "Full Name", "Email", "Gender", "Phone Number", "Class", "Course", "NameMajor", "End Day", "Action"];
 
     const renderDataTable = () => {
         return students.slice((page - 1) * countElementInPage, countElementInPage * page).map(student => {
@@ -142,9 +143,9 @@ const ListStudent = () => {
                 email: student.email,
                 gender: student.sex === 'male' ? <span className='font-bold text-primary'>{student.sex}</span> : <span className='font-bold text-purple-700'>{student.sex}</span>,
                 phone: student.phone,
-                class: student.className,
+                class: student.nameClass,
                 schoolYear: student.year_study,
-                startDay: student.startDay,
+                nameMajor: student.nameMajor,
                 endDay: student.endDay,
                 status: (
                     <div className='flex justify-center'>

@@ -76,7 +76,7 @@ const FormStudentIntern = ({ isOpen, student, handleClose }) => {
                 </div>
                 <div className='flex w-full py-2'>
                     <label className='w-40 font-bold'>Teacher name:</label>
-                    <p>Tran Cong An</p>
+                    <p>{internship.teacherName}</p>
                 </div>
                 <div className='flex w-1/2 py-2'>
                     <label className='w-40 font-bold'>Start date:</label>

@@ -44,7 +44,7 @@ const StudentResult = () => {
             {isLoading && <Loading />}
             <div className="w-full h-full bg-white rounded shadow overflow-hidden">
                 <div className='flex bg-gray-700 justify-between shadow-md items-center shadow-gray-200 pr-4'>
-                    <h2 className='text-white font-bold text-3xl pb-1 pl-5 uppercase'>Result</h2>
+                    <h2 className='text-white font-bold text-3xl pb-1 pl-5 uppercase'>Result Student</h2>
                 </div>
                 <div className="h-full w-full body-content overflow-hidden px-8">
                     <div>

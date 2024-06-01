@@ -1,10 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Dialog, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
+import { Dialog, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField, Select, MenuItem  } from '@mui/material';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import avatar from "../../../assets/avatar.webp";
 import StudentService from '../../../services/StudentService';
+import ClassesService from '../../../services/ClassesService';
 import Loading from '../../../shared/loading/Loading';
 import { checkEmptyObject, fileToBase64 } from "../../../untils/Ultil";
 
@@ -29,6 +30,8 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
     const isUpdate = !checkEmptyObject(student);
     const [isLoading, setIsLoading] = useState(false);
     const [srcAvatar, setSrcAvatar] = useState(avatar);
+    const [classList, setClassList] = useState([]);
+
     const { handleSubmit, control, formState: { errors }, setValue } = useForm({
         defaultValues: {
             fullname: "",
@@ -86,7 +89,19 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
             setIsLoading(false);
         }
     }
-
+    useEffect(() => {
+        const fetchClassList = async () => {
+            try {
+                const classes = await ClassesService.getListClasses();
+                console.log(classes); // In ra giá trị của classes
+                setClassList(classes.data);
+            } catch (error) {
+                console.error('Error fetching class list:', error);
+            }
+        };
+        fetchClassList();
+    }, []);
+    
     useEffect(() => {
         if (!checkEmptyObject(student)) {
             setValue("fullname", student.fullname ?? student.name);
@@ -196,7 +211,12 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
                                     control={control}
                                     name="className"
                                     render={({ field }) => (
-                                        <TextField disabled={isUpdateInfo} error={!!errors.className?.message} size='small' className='w-full' label="Class name:" variant="outlined" {...field} />
+                                        <Select disabled={isUpdateInfo} error={!!errors.className?.message} size='small' className='w-full' label="Class name:" variant="outlined" {...field}>
+                                            <MenuItem value="">-- Chọn lớp --</MenuItem>
+                                            {Array.isArray(classList) && classList.map((classItem) => (
+                                                <MenuItem key={classItem.id} value={classItem.id}>{classItem.name}</MenuItem>
+                                            ))}
+                                        </Select>
                                     )}
                                 />
                                 <p className='text-red-600'>{errors.className?.message}</p>

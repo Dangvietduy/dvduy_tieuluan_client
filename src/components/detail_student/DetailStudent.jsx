@@ -175,7 +175,7 @@ const DetailStudent = () => {
                                 <p>{infoStudent.fullname}</p>
                             </div>
                             <div className='flex text-lg col-span-2 py-2'>
-                                <div className='w-28 font-bold'>Gmail:</div>
+                                <div className='w-28 font-bold'>Email:</div>
                                 <p>{infoStudent.email}</p>
                             </div>
                             <div className='flex text-lg col-span-2 py-2'>
@@ -199,7 +199,7 @@ const DetailStudent = () => {
                         <div className='grid grid-cols-2 mb-4 px-4'>
                             <div className='flex text-lg py-2'>
                                 <div className='w-28 font-bold'>Class:</div>
-                                <p>{infoStudent.className}</p>
+                                <p>{infoStudent.nameClass}</p>
                             </div>
                             <div className='flex text-lg py-2'>
                                 <div className='w-28 font-bold'>Course:</div>
