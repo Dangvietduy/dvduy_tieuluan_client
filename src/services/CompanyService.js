@@ -177,14 +177,17 @@ const CompanyService = {
     },
     updateCompany: async (id, data) => {
         try {
+           
             const result = await https({
-                method: ConstanstAPI.UPDATE_STUDENT.method,
-                url: ConstanstAPI.UPDATE_STUDENT.url + '/' + id,
+                method: ConstanstAPI.UPDATE_COMPANY.method,
+                url: ConstanstAPI.UPDATE_COMPANY.url + '/' + id,
                 data: data
             });
             return result;
         } catch (err) {
+
             return { status: err.response.status, data: err.response.data?.message }
+
         }
     },
     updateEvaluateCompany: async (data) => {
@@ -202,8 +205,8 @@ const CompanyService = {
     deleteCompany: async (id) => {
         try {
             const result = await https({
-                method: ConstanstAPI.DELETE_STUDENT.method,
-                url: ConstanstAPI.DELETE_STUDENT.url + '/' + id,
+                method: ConstanstAPI.DELETE_COMPANY.method,
+                url: ConstanstAPI.DELETE_COMPANY.url + '/' + id,
             });
             return result;
         } catch (err) {

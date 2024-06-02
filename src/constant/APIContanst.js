@@ -168,7 +168,7 @@ export const ConstanstAPI = {
         method: "POST"
     },
     UPDATE_COMPANY: {
-        url: "http://localhost:8080/company/update",
+        url: "http://localhost:8080/manager/company/update",
         method: "PUT"
     },
     DELETE_COMPANY: {
