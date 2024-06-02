@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Dialog, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField, Select, MenuItem  } from '@mui/material';
+import { Dialog, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField, Select, MenuItem } from '@mui/material';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -16,7 +16,7 @@ const schema = yup.object({
     sex: yup.string().required("Gender must be required!"),
     phone: yup.string().required("Phone number must be required!"),
     address: yup.string().required("Address must be required!"),
-    className: yup.string().required("Class name must be required!"),
+    class_id: yup.string().required("Class name must be required!"),
     year_study: yup.string().required("Course must be required!"),
     department: yup.string().required("Department must be required!"),
 }).required();
@@ -40,7 +40,7 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
             sex: "male",
             phone: "",
             address: "",
-            className: "",
+            class_id: "",
             year_study: "",
             department: "",
             avatar: ""
@@ -101,7 +101,7 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
         };
         fetchClassList();
     }, []);
-    
+
     useEffect(() => {
         if (!checkEmptyObject(student)) {
             setValue("fullname", student.fullname ?? student.name);
@@ -110,7 +110,7 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
             setValue("address", student.address);
             setValue("sex", student.sex);
             setValue("phone", student.phone);
-            setValue("className", student.className ?? student.class_);
+            setValue("class_id", student.class_id ?? student.class_);
             setValue("year_study", student.year_study ?? student.yearStudy);
             setValue("department", student.department);
             if (student.avatar) {
@@ -209,9 +209,9 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
                             <div className='pb-4 w-full'>
                                 <Controller
                                     control={control}
-                                    name="className"
+                                    name="class_id"
                                     render={({ field }) => (
-                                        <Select disabled={isUpdateInfo} error={!!errors.className?.message} size='small' className='w-full' label="Class name:" variant="outlined" {...field}>
+                                        <Select disabled={isUpdateInfo} error={!!errors.class_id?.message} size='small' className='w-full' label="Class name:" variant="outlined" {...field}>
                                             <MenuItem value="">-- Chọn lớp --</MenuItem>
                                             {Array.isArray(classList) && classList.map((classItem) => (
                                                 <MenuItem key={classItem.id} value={classItem.id}>{classItem.name}</MenuItem>
@@ -219,7 +219,7 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
                                         </Select>
                                     )}
                                 />
-                                <p className='text-red-600'>{errors.className?.message}</p>
+                                <p className='text-red-600'>{errors.class_id?.message}</p>
                             </div>
                             <div className='flex gap-4'>
                                 <div className='pb-4 w-full'>
