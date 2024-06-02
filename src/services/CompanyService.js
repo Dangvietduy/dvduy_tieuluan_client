@@ -63,10 +63,11 @@ const CompanyService = {
         }
     },
     createCompany: async (data) => {
+
         try {
             const result = await https({
-                method: ConstanstAPI.INSERT_STUDENT.method,
-                url: ConstanstAPI.INSERT_STUDENT.url,
+                method: ConstanstAPI.INSERT_COMPANY.method,
+                url: ConstanstAPI.INSERT_COMPANY.url,
                 data: data
             });
             return result;

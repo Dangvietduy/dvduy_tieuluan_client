@@ -27,7 +27,7 @@ const FormCompany = ({ isOpen, company, handleClose, isUpdateInfo = false }) => 
     const [srcAvatar, setSrcAvatar] = useState(avatar);
     const { handleSubmit, control, formState: { errors }, setValue } = useForm({
         defaultValues: {
-            name: "",
+            companyName: "",
             email: "",
             phone: "",
             industry: "",
@@ -98,7 +98,7 @@ const FormCompany = ({ isOpen, company, handleClose, isUpdateInfo = false }) => 
                             <div className='pb-4 w-full'>
                                 <Controller
                                     control={control}
-                                    name="fullname"
+                                    name="companyName"
                                     render={({ field }) => (
                                         <TextField error={!!errors.companyName?.message} size='small' className='w-full' label="Company name:" variant="outlined" {...field} />
                                     )}
@@ -126,6 +126,16 @@ const FormCompany = ({ isOpen, company, handleClose, isUpdateInfo = false }) => 
                                     />
                                     <p className='text-red-600'>{errors.phone?.message}</p>
                                 </div>
+                            </div>
+                            <div className='pb-4 w-full'>
+                                <Controller
+                                    control={control}
+                                    name="industry"
+                                    render={({ field }) => (
+                                        <TextField error={!!errors.industry?.message} size='small' className='w-full' label="Industry:" variant="outlined" {...field} />
+                                    )}
+                                />
+                                <p className='text-red-600'>{errors.industry?.message}</p>
                             </div>
                             <div className='pb-4 w-full'>
                                 <Controller
