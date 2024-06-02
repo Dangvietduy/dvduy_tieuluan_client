@@ -14,19 +14,23 @@ const Sidebar = ({ isShowMenu }) => {
                         role === "MANAGER" && <>
                             <NavLink to={'/teacher'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdAccountBox size={30} />
-                                <span className='pl-3 text-lg sidebar-text'>Manager Teacher</span>
+                                <span className='pl-3 text-lg sidebar-text'> Teacher</span>
                             </NavLink>
                             <NavLink to={'/list-student'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdSchool size={30} />
-                                <span className='pl-3 text-lg sidebar-text'>Manager Student</span>
+                                <span className='pl-3 text-lg sidebar-text'> Student</span>
                             </NavLink>
                             <NavLink to={'/company'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdSchool size={30} />
-                                <span className='pl-3 text-lg sidebar-text'>Manager Company</span>
+                                <span className='pl-3 text-lg sidebar-text'> Company</span>
+                            </NavLink>
+                            <NavLink to={'/major'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
+                                <MdSchool size={30} />
+                                <span className='pl-3 text-lg sidebar-text'> Major</span>
                             </NavLink>
                             <NavLink to={'/internship'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdLocationCity size={30} />
-                                <span className='pl-3 text-lg sidebar-text'>Manager Internship</span>
+                                <span className='pl-3 text-lg sidebar-text'> Internship</span>
                             </NavLink>
                             <NavLink to={'/statistical'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdOutlineInsertChartOutlined size={30} />
@@ -39,7 +43,7 @@ const Sidebar = ({ isShowMenu }) => {
                         role === "STUDENT" && <>
                             <NavLink to={'/student/internship'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdOutlineMapsHomeWork size={30} />
-                                <span className='pl-3 text-lg sidebar-text whitespace-nowrap'>Manager internship</span>
+                                <span className='pl-3 text-lg sidebar-text whitespace-nowrap'> internship</span>
                             </NavLink>
                             <NavLink to={'/student/attendance'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdCalendarToday size={30} />

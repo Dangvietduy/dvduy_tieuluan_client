@@ -55,6 +55,7 @@ function RouterComponent() {
                 <Route path='/internship/detail/:id' element={<PrivateRoute><DetailInternship /></PrivateRoute>} />
                 <Route path='/statistical' element={<PrivateRoute><Statistical /></PrivateRoute>} />
                 <Route path='/company' element={<PrivateRoute><Company /></PrivateRoute>} />            
+                <Route path='/major' element={<PrivateRoute><Company /></PrivateRoute>} />            
                 <Route path='/list-company/detail/:id' element={<PrivateRoute><DetailCompany /></PrivateRoute>} />
             </>
         )
