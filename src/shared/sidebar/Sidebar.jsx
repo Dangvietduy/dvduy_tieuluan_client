@@ -20,11 +20,11 @@ const Sidebar = ({ isShowMenu }) => {
                                 <MdSchool size={30} />
                                 <span className='pl-3 text-lg sidebar-text'> Student</span>
                             </NavLink>
-                            <NavLink to={'/company'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
+                            <NavLink to={'/list-company'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdSchool size={30} />
                                 <span className='pl-3 text-lg sidebar-text'> Company</span>
                             </NavLink>
-                            <NavLink to={'/major'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
+                            <NavLink to={'/list-major'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdSchool size={30} />
                                 <span className='pl-3 text-lg sidebar-text'> Major</span>
                             </NavLink>
