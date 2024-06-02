@@ -175,5 +175,9 @@ export const ConstanstAPI = {
         url: "http://localhost:8080/manager/company",
         method: "DELETE"
     },
+    GET_LIST_CLASSES:{
+        url: "http://localhost:8080/manager/listClasses",
+        method: "GET"
+    }
 }
 

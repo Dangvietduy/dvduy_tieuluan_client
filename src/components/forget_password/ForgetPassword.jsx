@@ -93,7 +93,7 @@ const ForgetPassword = () => {
                             <p className='text-red-600'>{errors.username?.message}</p>
                         </div>
                         <div className="text-right">
-                            <Link to={'/'} className="text-primary">I have a account!</Link>
+                            <Link to={'/'} className="text-primary">I have an account!</Link>
                         </div>
                         <div className='text-center mt-8'>
                             <button type='submit' className="btn btn-primary w-full">Sumbit</button>
