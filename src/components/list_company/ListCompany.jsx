@@ -30,11 +30,7 @@ const ListCompany = () => {
         try {
             const companyResult = await CompanyService.getListCompany();
             if (companyResult?.status === 200) {
-                const data = companyResult.data.map((company) => ({
-                    ...company.internship,
-                    idInternship: student.internship?.id,
-                    ...company.companies,
-                }))
+                const data = companyResult.data
                 setCompanies(data);
             }
         } catch (error) {
@@ -98,11 +94,7 @@ const ListCompany = () => {
         try {
             setIsLoading(true);
             const res = await CompanyService.getSearchListCompany(search);
-            const data = res.data.map((company) => ({
-                ...company.internship,
-                idInternship: student.internship?.id,
-                ...student.students,
-            }))
+            const data = res.data
             setCompany(data);
         } catch (error) {
             setObjAlert({ isOpen: true, message: error.message, type: "error" });
