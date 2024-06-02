@@ -9,7 +9,7 @@ import Loading from '../../../shared/loading/Loading';
 import { checkEmptyObject, fileToBase64 } from "../../../untils/Ultil";
 
 const schema = yup.object({
-    companyName: yup.string().required("Full companyName must be required!"),
+    name: yup.string().required("Full name must be required!"),
     email: yup.string().email("Please enter incorrect email format!").required("Email must be required!"),
     phone: yup.string().required("Phone number must be required!"),
     industry: yup.string().required("Industry must be required!"),
@@ -27,7 +27,7 @@ const FormCompany = ({ isOpen, company, handleClose, isUpdateInfo = false }) => 
     const [srcAvatar, setSrcAvatar] = useState(avatar);
     const { handleSubmit, control, formState: { errors }, setValue } = useForm({
         defaultValues: {
-            companyName: "",
+            name: "",
             email: "",
             phone: "",
             industry: "",
@@ -80,7 +80,7 @@ const FormCompany = ({ isOpen, company, handleClose, isUpdateInfo = false }) => 
 
     useEffect(() => {
         if (!checkEmptyObject(company)) {
-            setValue("companyName", company.name ?? company.name);
+            setValue("name", company.name ?? company.name);
             setValue("email", company.email);
             setValue("phone", company.phone);
             setValue("industry", company.industry);
@@ -98,12 +98,12 @@ const FormCompany = ({ isOpen, company, handleClose, isUpdateInfo = false }) => 
                             <div className='pb-4 w-full'>
                                 <Controller
                                     control={control}
-                                    name="companyName"
+                                    name="name"
                                     render={({ field }) => (
-                                        <TextField error={!!errors.companyName?.message} size='small' className='w-full' label="Company name:" variant="outlined" {...field} />
+                                        <TextField error={!!errors.name?.message} size='small' className='w-full' label="Company name:" variant="outlined" {...field} />
                                     )}
                                 />
-                                <p className='text-red-600'>{errors.companyName?.message}</p>
+                                <p className='text-red-600'>{errors.name?.message}</p>
                             </div>
                             <div className='pb-4 w-full'>
                                 <Controller
