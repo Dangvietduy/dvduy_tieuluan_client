@@ -174,11 +174,8 @@ export const ConstanstAPI = {
     DELETE_COMPANY: {
         url: "http://localhost:8080/manager/company",
         method: "DELETE"
-    },
-    GET_LIST_CLASSES:{
-        url: "http://localhost:8080/manager/listClasses",
-        method: "GET"
     }
+
 
     ,
     GET_LIST_MAJOR: {
@@ -203,6 +200,35 @@ export const ConstanstAPI = {
     },
     DELETE_MAJOR: {
         url: "http://localhost:8080/manager/major",
+        method: "DELETE"
+    },
+
+
+
+
+    GET_LIST_CLASS: {
+        url: "http://localhost:8080/manager/listClasses",
+        method: "GET"
+    }
+    ,
+    GET_LIST_CLASS_SEARCH: {
+        url: "http://localhost:8080/manager/classes/search",
+        method: "POST"
+    },
+    GET_INFO_CLASS: {
+        url: "http://localhost:8080/classes/",
+        method: "GET"
+    },
+    INSERT_CLASS: {
+        url: "http://localhost:8080/manager/classes",
+        method: "POST"
+    },
+    UPDATE_CLASS: {
+        url: "http://localhost:8080/manager/classes/update",
+        method: "PUT"
+    },
+    DELETE_CLASS: {
+        url: "http://localhost:8080/manager/classes",
         method: "DELETE"
     },
 }
