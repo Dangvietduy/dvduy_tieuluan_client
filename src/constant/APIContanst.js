@@ -179,5 +179,31 @@ export const ConstanstAPI = {
         url: "http://localhost:8080/manager/listClasses",
         method: "GET"
     }
+
+    ,
+    GET_LIST_MAJOR: {
+        url: "http://localhost:8080/manager/listmajor",
+        method: "GET"
+    },
+    GET_LIST_MAJOR_SEARCH: {
+        url: "http://localhost:8080/manager/major/search",
+        method: "POST"
+    },
+    GET_INFO_MAJOR: {
+        url: "http://localhost:8080/major/infor",
+        method: "GET"
+    },
+    INSERT_MAJOR: {
+        url: "http://localhost:8080/manager/major",
+        method: "POST"
+    },
+    UPDATE_MAJOR: {
+        url: "http://localhost:8080/manager/major/update",
+        method: "PUT"
+    },
+    DELETE_MAJOR: {
+        url: "http://localhost:8080/manager/major",
+        method: "DELETE"
+    },
 }
 
