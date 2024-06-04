@@ -101,7 +101,7 @@ const DetailStudent = () => {
                         }
                     }
                     const resEvaluate = await StudentService.getEvaluateStudent(resStudent.data.id);
-                    if (resEvaluate.status === 200) {
+                    if (resEvaluate.status === 200 && resEvaluate.data !== null) {
                         response = {
                             ...response,
                             ...resEvaluate.data,

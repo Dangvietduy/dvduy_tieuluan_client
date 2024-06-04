@@ -93,14 +93,15 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
         const fetchClassList = async () => {
             try {
                 const classes = await ClassesService.getListClasses();
-                console.log(classes); // In ra giá trị của classes
                 setClassList(classes.data);
             } catch (error) {
                 console.error('Error fetching class list:', error);
             }
         };
-        fetchClassList();
-    }, []);
+        if(isUpdateInfo) {
+            fetchClassList();
+        }
+    }, [isUpdateInfo]);
 
     useEffect(() => {
         if (!checkEmptyObject(student)) {
@@ -110,7 +111,7 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
             setValue("address", student.address);
             setValue("sex", student.sex);
             setValue("phone", student.phone);
-            setValue("class_id", student.class_id ?? student.class_);
+            setValue("class_id", student.classes ?? student.clazz?.id);
             setValue("year_study", student.year_study ?? student.yearStudy);
             setValue("department", student.department);
             if (student.avatar) {
@@ -213,9 +214,11 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
                                     render={({ field }) => (
                                         <Select disabled={isUpdateInfo} error={!!errors.class_id?.message} size='small' className='w-full' label="Class name:" variant="outlined" {...field}>
                                             <MenuItem value="">-- Chọn lớp --</MenuItem>
-                                            {Array.isArray(classList) && classList.map((classItem) => (
+                                            {Array.isArray(classList) ? classList.map((classItem) => (
                                                 <MenuItem key={classItem.id} value={classItem.id}>{classItem.name}</MenuItem>
-                                            ))}
+                                            )) :
+                                            <MenuItem value={student.clazz.id}>{student.clazz.name}</MenuItem>
+                                            }
                                         </Select>
                                     )}
                                 />

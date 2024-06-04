@@ -1,9 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Dialog, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
+import { Dialog, TextField } from '@mui/material';
 import React, { Fragment, useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import avatar from "../../../assets/avatar.webp";
 import MajorService from '../../../services/MajorService';
 import Loading from '../../../shared/loading/Loading';
 import { checkEmptyObject } from "../../../untils/Ultil";

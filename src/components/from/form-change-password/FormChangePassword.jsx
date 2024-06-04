@@ -3,11 +3,12 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Dialog, FormControl, IconButton, Input, InputAdornment, InputLabel } from '@mui/material';
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import * as yup from 'yup';
 import { logout } from '../../../redux/auth/AuthReducer';
 import AuthService from '../../../services/AuthService';
 import Loading from "../../../shared/loading/Loading";
-import * as yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
 import ModalAlert from '../../../shared/modal-alert/ModalAlert';
 
 const schema = yup.object({
@@ -19,6 +20,7 @@ const schema = yup.object({
 const FormChangePassword = ({ isOpen, handleClose }) => {
     const { name } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     const [isShowAlert, setIsShowAlert] = useState(false);
     const [showPassword, setShowPassword] = useState({
@@ -72,6 +74,7 @@ const FormChangePassword = ({ isOpen, handleClose }) => {
     const handleConfirmAlert = () => {
         setIsShowAlert(false);
         handleClose();
+        navigate('/');
         dispatch(logout());
     }
 

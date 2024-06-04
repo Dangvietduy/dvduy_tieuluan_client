@@ -34,7 +34,7 @@ const DetailInternship = () => {
                 email: student.email,
                 gender: student.sex === 'male' ? <span className='font-bold text-primary'>{student.sex}</span> : <span className='font-bold text-purple-700'>{student.sex}</span>,
                 phone: student.phone,
-                class: student.className,
+                class: student.nameClass,
                 schoolYear: student.year_study,
                 status: (
                     <div className='flex justify-center'>

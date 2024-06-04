@@ -94,11 +94,11 @@ const ListMajor = () => {
 
 
 
-    const handleViewDetail = () => {
-        if (idMajor) {
-            navigate("/list-major/detail/" + idMajor);
-        }
-    }
+    // const handleViewDetail = () => {
+    //     if (idMajor) {
+    //         navigate("/list-major/detail/" + idMajor);
+    //     }
+    // }
 
     const handleCloseModalConfirmDelete = () => {
         setIsOpenModalConfirmDelete(false);
@@ -163,9 +163,9 @@ const ListMajor = () => {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleViewDetail}>
+                {/* <MenuItem onClick={handleViewDetail}>
                     <div className='flex'><MdOutlineRemoveRedEye size={25} className='text-primary' /> <div className='w-20 px-4'>Detail</div></div>
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem onClick={showModalUpdate}>
                     <div className='flex'><MdEdit size={25} className='text-yellow-700' /> <div className='w-20 px-4'>Update</div></div>
                 </MenuItem>

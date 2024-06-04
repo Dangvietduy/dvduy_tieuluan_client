@@ -53,7 +53,7 @@ const InfoDetail = () => {
                                 <div className='grid grid-cols-2 mb-4 px-4'>
                                     <div className='flex text-lg py-2'>
                                         <div className='w-28 font-bold'>Class:</div>
-                                        <p>{dataAccount?.class_}</p>
+                                        <p>{dataAccount.clazz?.name}</p>
                                     </div>
                                     <div className='flex text-lg py-2'>
                                         <div className='w-28 font-bold'>School year:</div>

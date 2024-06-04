@@ -10,6 +10,7 @@ import moment from 'moment/moment';
 const StudentAttendance = () => {
 
     const [isLoading, setIsLoading] = useState(true);
+    const [isInternship, setIsInternship] = useState(false);
     const [attendances, setAttendaces] = useState([]);
     const id = useSelector(state => state.auth.idStudentTeacher);
 
@@ -44,7 +45,12 @@ const StudentAttendance = () => {
     useEffect(() => {
         const getListAttendance = async () => {
             const res = await StudentService.getListAttendanceByStudent(id);
-            setAttendaces(res.data);
+            if (res.status === 200) {
+                setAttendaces(res.data);
+                setIsInternship(true);
+            } else {
+                setIsInternship(false);
+            }
             setIsLoading(false);
         }
         getListAttendance();
@@ -57,6 +63,7 @@ const StudentAttendance = () => {
                 <div className='flex bg-gray-700 justify-between shadow-md items-center shadow-gray-200 pr-4'>
                     <h2 className='text-white font-bold text-3xl pb-1 pl-5 uppercase'>ATTENDANCE</h2>
                 </div>
+                {isInternship ?
                 <div className="h-full w-full body-content overflow-hidden px-8">
                     <div className='flex gap-2 py-2'>
                         <button
@@ -71,7 +78,8 @@ const StudentAttendance = () => {
                         <p className='border-b border-primary font-bold text-primary text-xl mt-2'>List Attendance:</p>
                         <TableGeneral headers={headers} body={renderBodyTable()} />
                     </div>
-                </div>
+                </div> : 
+                <p className='text-center text-xl text-gray-500 mt-2'>Students have not registered for internships so they cannot take attendance!</p>}
             </div>
         </div>
     )
