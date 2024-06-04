@@ -26,6 +26,7 @@ import PrivateRoute from './PrivateRoute';
 import ListCompany from '../components/list_company/ListCompany';
 import DetailCompany from '../components/detail_company/DetailCompany';
 import ListMajor from '../components/list_major/ListMajor';
+import ListClass from '../components/list_class/ListClass';
 
 function RouterComponent() {
     const { token, role } = useSelector((state) => state.auth);
@@ -58,6 +59,7 @@ function RouterComponent() {
                 <Route path='/statistical' element={<PrivateRoute><Statistical /></PrivateRoute>} />
                 <Route path='/list-company' element={<PrivateRoute><ListCompany /></PrivateRoute>} />            
                 <Route path='/list-major' element={<PrivateRoute><ListMajor /></PrivateRoute>} />            
+                <Route path='/list-class' element={<PrivateRoute><ListClass /></PrivateRoute>} />            
                 <Route path='/list-company/detail/:id' element={<PrivateRoute><DetailCompany /></PrivateRoute>} />
             </>
         )

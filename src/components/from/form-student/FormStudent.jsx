@@ -208,6 +208,7 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
                                 <img src={srcAvatar} onClick={chooseImage} alt="Avatar Student" width={200} height={300} />
                             </div>
                             <div className='pb-4 w-full'>
+                        
                                 <Controller
                                     control={control}
                                     name="class_id"

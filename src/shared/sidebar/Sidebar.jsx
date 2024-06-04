@@ -28,6 +28,10 @@ const Sidebar = ({ isShowMenu }) => {
                                 <MdSchool size={30} />
                                 <span className='pl-3 text-lg sidebar-text'> Major</span>
                             </NavLink>
+                            <NavLink to={'/list-class'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
+                                <MdSchool size={30} />
+                                <span className='pl-3 text-lg sidebar-text'> Class</span>
+                            </NavLink>
                             <NavLink to={'/internship'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdLocationCity size={30} />
                                 <span className='pl-3 text-lg sidebar-text'> Internship</span>
