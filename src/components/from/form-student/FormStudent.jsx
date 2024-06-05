@@ -92,15 +92,16 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
     useEffect(() => {
         const fetchClassList = async () => {
             try {
-                const classes = await ClassesService.getListClasses();
+                const classes = await ClassesService.getListClass();
                 setClassList(classes.data);
             } catch (error) {
                 console.error('Error fetching class list:', error);
             }
         };
-        if(isUpdateInfo) {
-            fetchClassList();
-        }
+        // if(isUpdateInfo) {
+        //     fetchClassList();
+        // }
+        fetchClassList();
     }, [isUpdateInfo]);
 
     useEffect(() => {
@@ -195,7 +196,6 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
                                             >
                                                 <FormControlLabel value="male" control={<Radio size="small" />} label="Male" />
                                                 <FormControlLabel value="female" control={<Radio size="small" />} label="Female" />
-                                                <FormControlLabel value="other" control={<Radio size="small" />} label="Other" />
                                             </RadioGroup>
                                         </FormControl>
                                     )}
@@ -214,7 +214,7 @@ const FormStudent = ({ isOpen, student, handleClose, isUpdateInfo = false }) => 
                                     name="class_id"
                                     render={({ field }) => (
                                         <Select disabled={isUpdateInfo} error={!!errors.class_id?.message} size='small' className='w-full' label="Class name:" variant="outlined" {...field}>
-                                            <MenuItem value="">-- Chọn lớp --</MenuItem>
+                                            <MenuItem value="">-- Chọn lớp 1 --</MenuItem>
                                             {Array.isArray(classList) ? classList.map((classItem) => (
                                                 <MenuItem key={classItem.id} value={classItem.id}>{classItem.name}</MenuItem>
                                             )) :

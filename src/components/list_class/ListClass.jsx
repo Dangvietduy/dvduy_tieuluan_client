@@ -21,7 +21,7 @@ const ListClass = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [objAlert, setObjAlert] = useState({ isOpen: false, message: '', type: null });
     const [classLst, setClassLst] = useState([]);
-    const [selectedClass, setSelectedClass] = useState({});
+    const [selectedClass, setSelectedClass] = useState(null);
     const [idClass, setIdClass] = useState(null);
     const [isOpenModalConfirmDelete, setIsOpenModalConfirmDelete] = useState(false);
     const [isOpenModalAdd, setIsOpenModalAdd] = useState(false);
@@ -77,7 +77,7 @@ const ListClass = () => {
 
     const closeModalAdd = () => {
         setIdClass(null);
-        setSelectedClass({});
+        setSelectedClass(null);
         setIsOpenModalAdd(false);
     }
 
@@ -147,7 +147,7 @@ const ListClass = () => {
             {isLoading && <Loading />}
             <div className="w-full h-full bg-white rounded shadow overflow-hidden">
                 <div className='flex bg-gray-700 justify-between shadow-md items-center shadow-gray-200 pr-4'>
-                    <h2 className='text-white font-bold text-3xl pb-1 pl-5 uppercase'>List Major</h2>
+                    <h2 className='text-white font-bold text-3xl pb-1 pl-5 uppercase'>List Class</h2>
                     <MdAdd onClick={showModalAdd} size={25} className='text-white hover:cursor-pointer hover:bg-gray-200 rounded-full' />
                 </div>
                 <div className="h-full w-full body-content overflow-hidden">
@@ -186,7 +186,7 @@ const ListClass = () => {
                 isOpenModalAdd && <FormClass
                     isOpen={isOpenModalAdd}
                     // idClass={idClass}
-                    dataItem={{ ...selectedClass, major: selectedClass.major.id, teacher: selectedClass.teacher.id }}
+                    dataItem={selectedClass ? { ...selectedClass, major: selectedClass.major?.id, teacher: selectedClass.teacher?.id } : null}
                     handleClose={closeModalAdd}
                 />
             }

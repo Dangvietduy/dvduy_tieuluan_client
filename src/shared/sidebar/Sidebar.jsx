@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdAccountBox, MdCalendarToday, MdFindInPage, MdLocationCity, MdMoveToInbox, MdOutlineInsertChartOutlined, MdOutlineMapsHomeWork, MdSchool } from 'react-icons/md';
+import { MdAccountBox, MdCalendarToday, MdFindInPage, MdLocationCity, MdMoveToInbox, MdOutlineInsertChartOutlined, MdOutlineMapsHomeWork, MdSchool, MdClass } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import "./Sidebar.scss";
@@ -14,27 +14,27 @@ const Sidebar = ({ isShowMenu }) => {
                         role === "MANAGER" && <>
                             <NavLink to={'/teacher'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdAccountBox size={30} />
-                                <span className='pl-3 text-lg sidebar-text'> Teacher</span>
+                                <span className='pl-3 text-lg sidebar-text'>Teacher</span>
                             </NavLink>
                             <NavLink to={'/list-student'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
-                                <MdSchool size={30} />
-                                <span className='pl-3 text-lg sidebar-text'> Student</span>
+                                <MdAccountBox size={30} />
+                                <span className='pl-3 text-lg sidebar-text'>Student</span>
                             </NavLink>
                             <NavLink to={'/list-company'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdSchool size={30} />
-                                <span className='pl-3 text-lg sidebar-text'> Company</span>
+                                <span className='pl-3 text-lg sidebar-text'>Company</span>
                             </NavLink>
                             <NavLink to={'/list-major'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdSchool size={30} />
-                                <span className='pl-3 text-lg sidebar-text'> Major</span>
+                                <span className='pl-3 text-lg sidebar-text'>Major</span>
                             </NavLink>
                             <NavLink to={'/list-class'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
-                                <MdSchool size={30} />
-                                <span className='pl-3 text-lg sidebar-text'> Class</span>
+                                <MdClass size={30} />
+                                <span className='pl-3 text-lg sidebar-text'>Class</span>
                             </NavLink>
                             <NavLink to={'/internship'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdLocationCity size={30} />
-                                <span className='pl-3 text-lg sidebar-text'> Internship</span>
+                                <span className='pl-3 text-lg sidebar-text'>Internship</span>
                             </NavLink>
                             <NavLink to={'/statistical'} className="flex items-center text-white py-4 hover:bg-blue-400 pl-5 pr-2">
                                 <MdOutlineInsertChartOutlined size={30} />

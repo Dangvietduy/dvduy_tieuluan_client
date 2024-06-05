@@ -36,8 +36,12 @@ const StudentInternship = () => {
         try {
             handleCloseModalConfirm();
             setIsLoading(true);
-            await InternshipService.deleteInternshipStudent(infoStudent.idIntershipStudent);
-            setObjAlert({isOpen: true, message: "Delete Internship Success!", type: "success"});
+            const resDeleteIntern = await InternshipService.deleteInternshipStudent(infoStudent.idIntershipStudent);
+            if(resDeleteIntern.status === 200) {
+                setObjAlert({isOpen: true, message: "Delete Internship Success!", type: "success"});
+            } else {
+                setObjAlert({isOpen: true, message: "Can't not delete Internship!", type: "error"});
+            }
         } catch (error) {
             
         }finally {

@@ -179,7 +179,6 @@ const FormTeacher = ({ isOpen, teacher, handleClose, isUpdateInfo = false }) => 
                                             >
                                                 <FormControlLabel value="male" control={<Radio size="small" />} label="Male" />
                                                 <FormControlLabel value="female" control={<Radio size="small" />} label="Female" />
-                                                <FormControlLabel value="other" control={<Radio size="small" />} label="Other" />
                                             </RadioGroup>
                                         </FormControl>
                                     )}
